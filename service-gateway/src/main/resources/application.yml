@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: service-geteway
+  profiles:
+    active: @current.active.profile@
+server:
+  port: 6802
+eureka:
+  client:
+    service-url:
+      defaultZone: @eureka.url@

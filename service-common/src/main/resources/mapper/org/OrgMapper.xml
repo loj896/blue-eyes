@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.blue.eyes.mapper.org.OrgMapper">
+  <resultMap id="BaseResultMap" type="com.blue.eyes.entity.org.Org">
+    <id column="org_id" jdbcType="VARCHAR" property="orgId" />
+    <result column="org_code" jdbcType="VARCHAR" property="orgCode" />
+    <result column="org_name" jdbcType="VARCHAR" property="orgName" />
+    <result column="parent_code" jdbcType="VARCHAR" property="parentCode" />
+    <result column="org_type" jdbcType="VARCHAR" property="orgType" />
+    <result column="create_id" jdbcType="VARCHAR" property="createId" />
+    <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="org_status" jdbcType="VARCHAR" property="orgStatus" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    org_id, org_code, org_name, parent_code, org_type, create_id, create_date, org_status
+  </sql>
+
+</mapper>

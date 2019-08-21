@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: service-health
+  profiles:
+    active: @current.active.profile@
+server:
+  port: 6803
+eureka:
+  client:
+    service-url:
+      defaultZone: @eureka.url@

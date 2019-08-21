@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.blue.eyes.mapper.mail.MailSendMapper">
+  <resultMap id="BaseResultMap" type="com.blue.eyes.entity.mail.MailSend">
+    <id column="send_id" jdbcType="VARCHAR" property="sendId" />
+    <result column="send_email" jdbcType="VARCHAR" property="sendEmail" />
+    <result column="email_subject" jdbcType="VARCHAR" property="emailSubject" />
+    <result column="email_content" jdbcType="VARCHAR" property="emailContent" />
+    <result column="receive_email" jdbcType="VARCHAR" property="receiveEmail" />
+    <result column="create_id" jdbcType="VARCHAR" property="createId" />
+    <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="mail_status" jdbcType="VARCHAR" property="mailStatus" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    send_id, send_email, email_subject, email_content, receive_email, create_id, create_date, 
+    mail_status
+  </sql>
+
+</mapper>

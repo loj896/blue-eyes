@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.blue.eyes</groupId>
+    <artifactId>blue-eyes</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0</version>
+    <modules>
+        <module>service-registry</module>
+        <module>service-gateway</module>
+        <module>service-health</module>
+        <module>service-common</module>
+        <module>service-mail</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!--定义公共模块-->
+            <dependency>
+                <groupId>com.blue.eyes</groupId>
+                <artifactId>service-common</artifactId>
+                <version>${service-common.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.7.RELEASE</version>
+        <relativePath/>
+    </parent>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <spring-cloud.version>Greenwich.SR2</spring-cloud.version>
+        <eureka.server.version>2.0.2.RELEASE</eureka.server.version>
+        <eureka.client.version>2.0.1.RELEASE</eureka.client.version>
+        <mysql.version>8.0.11</mysql.version>
+        <mybatis.version>1.3.0</mybatis.version>
+        <mybatis-plus.version>3.1.0</mybatis-plus.version>
+        <aspectj.version>1.8.9</aspectj.version>
+        <swagger2.version>2.5.0</swagger2.version>
+        <service-common.version>1.0</service-common.version>
+        <easyexcel.version>1.0.4</easyexcel.version>
+    </properties>
+
+    <!--多环境配置-->
+    <profiles>
+        <!--开发环境-->
+        <profile>
+            <id>dev</id>
+            <properties>
+                <current.active.profile>dev</current.active.profile>
+                <eureka.url>http://localhost:6801/eureka/</eureka.url>
+                <db.user>amei</db.user>
+                <db.pwd>PWD</db.pwd>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+    </profiles>
+
+
+</project>

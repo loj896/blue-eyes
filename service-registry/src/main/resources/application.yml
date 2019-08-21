@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: service-registry
+  profiles:
+    active: @current.active.profile@
+server:
+  port: 6801
+eureka:
+  instance:
+    hostname: localhost
+    prefer-ip-address: true
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: @eureka.url@
+  server:
+    wait-time-in-ms-when-sync-empty: 0
+    enable-self-preservation: false
+    #剔除过期实例时间
+    eviction-interval-timer-in-ms: 30000
