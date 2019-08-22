@@ -91,6 +91,7 @@ public class LoggerAspect {
             loggerDto.setLoggerType(sysLogger.type());
             loggerDto.setMethod(handlerInfo);
             loggerDto.setReqTime(new Date());
+            loggerDto.setDuration(duration);
 
             loggerService.addMgLogger(loggerDto);
         }

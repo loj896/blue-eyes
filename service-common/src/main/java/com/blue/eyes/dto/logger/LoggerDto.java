@@ -90,6 +90,11 @@ public class LoggerDto {
     @Field("method")
     private String method;
 
+    /**
+     * 耗时
+     */
+    private Long duration;
+
     public String getId() {
         return id;
     }
@@ -160,5 +165,13 @@ public class LoggerDto {
 
     public void setMethod(String method) {
         this.method = method;
+    }
+
+    public Long getDuration() {
+        return duration;
+    }
+
+    public void setDuration(Long duration) {
+        this.duration = duration;
     }
 }

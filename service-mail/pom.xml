@@ -23,8 +23,6 @@
             <artifactId>service-common</artifactId>
             <version>${service-common.version}</version>
         </dependency>
-
-
     </dependencies>
 
     <build>
