@@ -1,4 +1,9 @@
 spring:
+  boot:
+    admin:
+      notify:
+        pagerduty:
+          client: @pagerduty.client@
   datasource:
     druid:
       driver-class-name: com.mysql.cj.jdbc.Driver
@@ -39,3 +44,11 @@ spring:
   data:
     mongodb:
       uri: mongodb://loj:PWD@47.105.161.199:27017/loj-pro
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
