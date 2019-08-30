@@ -1,7 +1,4 @@
 spring:
-  instance:
-    leaseRenewalIntervalInSeconds: 10
-    health-check-url-path: /actuator/health
   security:
     user:
       name: @security.user.name@

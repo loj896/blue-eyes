@@ -1,9 +1,13 @@
 spring:
   boot:
     admin:
-      notify:
-        pagerduty:
-          client: @pagerduty.client@
+      client:
+        url:  @pagerduty.client@
+#  boot:
+#    admin:
+#      notify:
+#        pagerduty:
+#          client: @pagerduty.client@
   datasource:
     druid:
       driver-class-name: com.mysql.cj.jdbc.Driver

@@ -79,7 +79,7 @@
             <properties>
                 <current.active.profile>dev</current.active.profile>
                 <pagerduty.client>http://localhost:6803</pagerduty.client>
-                <eureka.url>http://localhost:6801/eureka/</eureka.url>
+                <eureka.url>http://${security.user.name}:${security.user.pwd}@localhost:6801/eureka/</eureka.url>
                 <db.user>amei</db.user>
                 <db.pwd>PWD</db.pwd>
                 <security.user.name>amei</security.user.name>

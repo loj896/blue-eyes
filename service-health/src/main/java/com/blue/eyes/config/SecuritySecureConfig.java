@@ -1,6 +1,10 @@
 package com.blue.eyes.config;
 
+import de.codecentric.boot.admin.server.config.AdminServerProperties;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler;
 
 /***
  *                    .::::. 
@@ -23,10 +27,9 @@ import org.springframework.context.annotation.Configuration;
  *                    '.:::::'                    ':'````.. 
  */
 @Configuration
-public class SecuritySecureConfig //extends WebSecurityConfigurerAdapter
-{
+public class SecuritySecureConfig extends WebSecurityConfigurerAdapter {
 
-    /*private final String adminContextPath;
+    private final String adminContextPath;
 
     public SecuritySecureConfig(AdminServerProperties adminServerProperties) {
         this.adminContextPath = adminServerProperties.getContextPath();
@@ -52,6 +55,6 @@ public class SecuritySecureConfig //extends WebSecurityConfigurerAdapter
                 //启用HTTP-Basic支持。这是Spring Boot Admin Client注册所必需的
                 .httpBasic().and();
         // @formatter:on
-    }*/
+    }
 
 }
