@@ -1,20 +1,37 @@
+# server
+server:
+  port: 6803
+
+# spring
 spring:
   application:
     name: service-health
   profiles:
     active: @current.active.profile@
-server:
-  port: 6803
+  security:
+    user:
+      name: @security.user.name@
+      password: @security.user.pwd@
+
+# eureka
 eureka:
   client:
     registryFetchIntervalSeconds: 5
     service-url:
-      defaultZone: ${EUREKA_SERVICE_URL:http://localhost:6801}/eureka/ #@eureka.url@
-    register-with-eureka: false
-    fetch-registry: false
+      defaultZone: @eureka.url@
   instance:
     leaseRenewalIntervalInSeconds: 10
     health-check-url-path: /actuator/health
     metadata-map:
-      user.name: @security.user.name@
-      user.password: @security.user.pwd@
+      user.name: ${spring.security.user.name}
+      user.password: ${spring.security.user.password}
+
+# management
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS

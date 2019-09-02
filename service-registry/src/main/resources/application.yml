@@ -1,10 +1,15 @@
+# server
+server:
+  port: 6801
+
+# spring
 spring:
   application:
     name: service-registry
   profiles:
     active: @current.active.profile@
-server:
-  port: 6801
+
+# eureka
 eureka:
   instance:
     hostname: localhost
@@ -19,3 +24,13 @@ eureka:
     enable-self-preservation: false
     #剔除过期实例时间
     eviction-interval-timer-in-ms: 30000
+
+# management
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS

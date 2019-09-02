@@ -78,12 +78,14 @@
             <id>dev</id>
             <properties>
                 <current.active.profile>dev</current.active.profile>
-                <pagerduty.client>http://localhost:6803</pagerduty.client>
-                <eureka.url>http://${security.user.name}:${security.user.pwd}@localhost:6801/eureka/</eureka.url>
-                <db.user>amei</db.user>
-                <db.pwd>PWD</db.pwd>
+                <spring.boot.admin.url>http://localhost:6803</spring.boot.admin.url>
+                <eureka.url>http://localhost:6801/eureka/</eureka.url>
                 <security.user.name>amei</security.user.name>
                 <security.user.pwd>PWD</security.user.pwd>
+                <db.user>amei</db.user>
+                <db.pwd>PWD</db.pwd>
+                <mongodb.user>loj</mongodb.user>
+                <mongodb.pwd>PWD</mongodb.pwd>
             </properties>
             <activation>
                 <activeByDefault>true</activeByDefault>

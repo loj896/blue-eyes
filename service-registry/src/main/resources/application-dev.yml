@@ -1,13 +1,1 @@
-spring:
-  security:
-    user:
-      name: @security.user.name@
-      password: @security.user.pwd@
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
-  endpoint:
-    health:
-      show-details: ALWAYS
+

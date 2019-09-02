@@ -2,6 +2,7 @@ package com.blue.eyes.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.blue.eyes.dto.AddMSDto;
 import com.blue.eyes.dto.SelMSDto;
@@ -9,7 +10,6 @@ import com.blue.eyes.dto.UptMSDto;
 import com.blue.eyes.entity.mail.MailSend;
 import com.blue.eyes.service.MlService;
 import com.blue.eyes.service.mail.MailSendService;
-import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
