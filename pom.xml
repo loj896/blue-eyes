@@ -14,6 +14,7 @@
         <module>service-health</module>
         <module>service-common</module>
         <module>service-mail</module>
+        <module>service-auth</module>
     </modules>
 
     <dependencyManagement>
@@ -69,6 +70,8 @@
         <service-common.version>1.0</service-common.version>
         <easyexcel.version>1.0.4</easyexcel.version>
         <spring-boot-admin.version>2.1.6</spring-boot-admin.version>
+        <!--打包时跳过测试类-->
+        <maven.test.skip>true</maven.test.skip>
     </properties>
 
     <!--多环境配置-->
@@ -78,8 +81,8 @@
             <id>dev</id>
             <properties>
                 <current.active.profile>dev</current.active.profile>
-                <spring.boot.admin.url>http://localhost:6803</spring.boot.admin.url>
-                <eureka.url>http://localhost:6801/eureka/</eureka.url>
+                <spring.boot.admin.url>http://47.105.161.199:6803</spring.boot.admin.url>
+                <eureka.url>http://47.105.161.199:6801/eureka/</eureka.url>
                 <security.user.name>amei</security.user.name>
                 <security.user.pwd>PWD</security.user.pwd>
                 <db.user>amei</db.user>

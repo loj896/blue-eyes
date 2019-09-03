@@ -1,11 +1,11 @@
 # server
 server:
-  port: 6821
+  port: 6804
 
 # spring
 spring:
   application:
-    name: service-mail
+    name: service-auth
   profiles:
     active: @current.active.profile@
   datasource:
@@ -22,6 +22,10 @@ spring:
     admin:
       client:
         url: @spring.boot.admin.url@
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
 
 # eureka
 eureka:

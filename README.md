@@ -12,5 +12,6 @@
 |1|service-registry|6801|服务注册中心| |
 |2|service-geteway|6802|服务网关| |
 |3|service-health|6803|健康监控| |
-|4|service-common|  |公共模块|数据库映射及公共组件、工具类|
-|5|service-mail|6821|邮件服务| |
+|4|service-auth|6804|统一认证| |
+|5|service-common|  |公共模块|数据库映射及公共组件、工具类|
+|6|service-mail|6821|邮件服务| |
