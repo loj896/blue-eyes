@@ -1,0 +1,60 @@
+# server
+server:
+  port: 6831
+
+# spring
+spring:
+  application:
+    name: service-mail
+  profiles:
+    active: @current.active.profile@
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://47.105.161.199:3306/mydb?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&rewriteBatchedStatements=true&allowPublicKeyRetrieval=true
+    username: @db.user@
+    password: @db.pwd@
+  data:
+    mongodb:
+      # 单机模式 mongodb://name:pass@ip:port/database
+      # 集群模式 mongodb://user:pwd@ip1:port1,ip2:port2/database
+      uri: mongodb://@mongodb.user@:@mongodb.pwd@@47.105.161.199:27017/loj-pro
+  boot:
+    admin:
+      client:
+        url: @spring.boot.admin.url@
+
+# eureka
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    health-check-url-path: /actuator/health
+  client:
+    registryFetchIntervalSeconds: 5
+    service-url:
+      defaultZone: @eureka.url@
+
+# management
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS
+
+mybatis-plus:
+  mapper-locations: classpath*:mapper/**/*.xml
+  type-aliases-package: com.blue.eyes.entity.*.*
+  global-config:
+    db-config:
+      db-type: mysql
+      id-type: uuid
+      field-strategy: not_null
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+      table-underline: true
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+    call-setters-on-nulls: true
