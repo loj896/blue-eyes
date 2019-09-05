@@ -6,6 +6,8 @@
 |2|Spring Cloud|Greenwich.SR2| |
 |3|Eureka Server|2.0.2.RELEASE| |
 |4|Eureka Client|2.0.1.RELEASE| |
+|5|spring-boot-admin|2.1.6| |
+|6|spring-boot-starter-actuator|2.1.7.RELEASE|
 ### 二、服务、模块
 |序号|服务/模块名称|端口|说明|备注|
 | --- | --- | --- | --- | --- |
@@ -15,3 +17,4 @@
 |4|service-auth|6804|统一认证| |
 |5|service-common|  |公共模块|数据库映射及公共组件、工具类|
 |6|service-mail|6821|邮件服务| |
+|7|technical-demo|6831|技术使用示例| |

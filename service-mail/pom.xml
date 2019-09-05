@@ -16,19 +16,22 @@
         <dependency>
             <groupId>com.blue.eyes</groupId>
             <artifactId>service-common</artifactId>
-            <version>${service-common.version}</version>
+            <version>${service.common.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-webflux</artifactId>
+            <version>${webflux.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+            <version>${eureka.client.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
+            <version>${actuator.version}</version>
         </dependency>
     </dependencies>
 
