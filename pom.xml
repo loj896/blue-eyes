@@ -15,6 +15,7 @@
         <module>service-common</module>
         <module>service-mail</module>
         <module>service-auth</module>
+        <module>technical-demo</module>
     </modules>
 
     <dependencyManagement>
