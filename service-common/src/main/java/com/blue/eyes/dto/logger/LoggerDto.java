@@ -91,6 +91,30 @@ public class LoggerDto {
     private String method;
 
     /**
+     * 参数
+     */
+    @Field("params")
+    private String params;
+
+    /**
+     * 返回代码
+     */
+    @Field("restCode")
+    private Integer restCode;
+
+    /**
+     * 返回结果
+     */
+    @Field("rest")
+    private String rest;
+
+    /**
+     * 提示信息
+     */
+    @Field("msg")
+    private String msg;
+
+    /**
      * 耗时
      */
     private Long duration;
@@ -173,5 +197,37 @@ public class LoggerDto {
 
     public void setDuration(Long duration) {
         this.duration = duration;
+    }
+
+    public String getParams() {
+        return params;
+    }
+
+    public void setParams(String params) {
+        this.params = params;
+    }
+
+    public Integer getRestCode() {
+        return restCode;
+    }
+
+    public void setRestCode(Integer restCode) {
+        this.restCode = restCode;
+    }
+
+    public String getRest() {
+        return rest;
+    }
+
+    public void setRest(String rest) {
+        this.rest = rest;
+    }
+
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
     }
 }

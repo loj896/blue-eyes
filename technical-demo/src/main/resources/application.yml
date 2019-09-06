@@ -5,7 +5,7 @@ server:
 # spring
 spring:
   application:
-    name: service-mail
+    name: technical-demo
   profiles:
     active: @current.active.profile@
   datasource:
