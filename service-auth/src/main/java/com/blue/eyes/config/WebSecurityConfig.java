@@ -1,6 +1,6 @@
 package com.blue.eyes.config;
 
-import com.blue.eyes.service.user.UserService;
+import com.blue.eyes.service.UserServiceDetail;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -11,6 +11,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
 
 /***
@@ -37,8 +38,8 @@ import javax.servlet.http.HttpServletResponse;
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-    @Autowired
-    private UserService userService;
+    @Resource
+    private UserServiceDetail userService;
 
     @Override
     public @Bean

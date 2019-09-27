@@ -31,7 +31,7 @@ import javax.annotation.Resource;
  *                    '.:::::'                    ':'````.. 
  */
 @Service
-public class UserDetailService implements UserDetailsService {
+public class UserServiceDetail implements UserDetailsService {
 
     @Resource
     private UserService userService;
@@ -41,8 +41,7 @@ public class UserDetailService implements UserDetailsService {
         QueryWrapper<User> querWrapper = new QueryWrapper<>();
         querWrapper.eq("user_status", "1");
         querWrapper.eq("user_name", userName);
-        User user = userService.getOne(querWrapper);
-        return null;
+        return userService.getOne(querWrapper);
     }
 
 }

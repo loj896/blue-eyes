@@ -37,6 +37,12 @@ public class ResultCallable implements Callable<String> {
     }
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {
+        System.out.println("thread start");
+        runThread();
+        System.out.println("thread end");
+    }
+
+    public static void runThread() throws ExecutionException, InterruptedException{
         ExecutorService service = Executors.newCachedThreadPool();
         ArrayList<Future<String>> futrues = new ArrayList<>();
         for (int i=0; i<100; i++){
