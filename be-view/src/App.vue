@@ -1,21 +1,25 @@
 <template>
   <div id="app">
     <!--<Login msg="Welcome to Your Vue.js App"></Login>-->
-    <HeadPage/>
+    <!--<HeadPage/>-->
 
-    <BottomPage/>
+    <BodyPage/>
+
+    <!--<BottomPage/>-->
   </div>
 </template>
 
 <script>
 
 import HeadPage from './components/common/HeadPage.vue'
+import BodyPage from './components/common/BodyPage.vue'
 import BottomPage from './components/common/BottomPage.vue'
 
 export default {
   name: 'app',
   components: {
       HeadPage,
+      BodyPage,
       BottomPage
   }
 }
