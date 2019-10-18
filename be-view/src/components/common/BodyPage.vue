@@ -8,6 +8,22 @@
             <el-date-picker v-model="date1" type="date" placeholder="选择日期"></el-date-picker>
         </div>
     </div>
+    <!--<el-container>
+        <el-aside>
+            左边
+        </el-aside>
+        <el-container>
+            <el-header>
+                头部
+            </el-header>
+            <el-main>
+                内容
+            </el-main>
+        </el-container>
+        <el-footer>
+            底部
+        </el-footer>
+    </el-container>-->
 </template>
 
 <script>
