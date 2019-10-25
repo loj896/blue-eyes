@@ -57,7 +57,7 @@
 
 <script>
     export default {
-        name: "UserManager.vue",
+        name: "UserManag.vue",
         methods: {
             tabHandleClick(row) {
                 console.log(row);
