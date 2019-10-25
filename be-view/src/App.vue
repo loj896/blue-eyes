@@ -1,34 +1,19 @@
 <template>
   <div id="app">
-    <!--<Login msg="Welcome to Your Vue.js App"></Login>-->
-    <!--<HeadPage/>-->
-
-     <!--<BodyPage/>-->
-
-    <!--<DemoPage/>-->
-
-    <!--<BottomPage/>-->
-
+    <!--<img alt="Vue logo" src="./assets/logo.png">
+    <HelloWorld msg="Welcome to Your Vue.js App"/>-->
     <IndexPage></IndexPage>
   </div>
 </template>
 
 <script>
-
-import HeadPage from './components/common/HeadPage.vue'
-import BodyPage from './components/common/BodyPage.vue'
-import BottomPage from './components/common/BottomPage.vue'
-import DemoPage from './components/demo/DemoPage.vue'
-
+//import HelloWorld from './components/HelloWorld.vue'
 import IndexPage from './components/index/IndexPage.vue'
 
 export default {
   name: 'app',
   components: {
-      // HeadPage,
-      // BodyPage,
-      // BottomPage,
-      // DemoPage,
+    // HelloWorld
       IndexPage
   }
 }
@@ -41,6 +26,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 10px;
+  margin-top: 60px;
 }
 </style>
