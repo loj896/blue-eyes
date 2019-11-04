@@ -16,6 +16,7 @@
         <module>service-mail</module>
         <module>service-auth</module>
         <module>technical-demo</module>
+        <module>service-plan</module>
     </modules>
 
     <dependencyManagement>
