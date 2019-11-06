@@ -1,6 +1,6 @@
 # server
 server:
-  port: 6821
+  port: 6823
 
 # spring
 spring:
@@ -22,6 +22,10 @@ spring:
     admin:
       client:
         url: @spring.boot.admin.url@
+        usernmae: @security.user.name@
+        password: @security.user.pwd@
+        instance:
+          prefer-ip: true
 
 # eureka
 eureka:

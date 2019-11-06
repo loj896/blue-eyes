@@ -23,7 +23,7 @@ eureka:
     wait-time-in-ms-when-sync-empty: 0
     enable-self-preservation: false
     #剔除过期实例时间
-    eviction-interval-timer-in-ms: 30000
+    eviction-interval-timer-in-ms: 3000
 
 # management
 management:
