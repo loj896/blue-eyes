@@ -36,14 +36,14 @@ public class TestController {
     @Autowired
     private TestService testService;
 
-    @ApiOperation("熔断器测试-后端异常处理")
+    @ApiOperation("断路器测试-后端异常处理")
     @PostMapping("/hystrixtError")
     public CommonResult hystrixtError(@RequestBody String name) throws Exception {
         String msg = testService.hystrixtError(name);
         return ResponseMgr.successWithData(msg);
     }
 
-    @ApiOperation("熔断器测试-正常")
+    @ApiOperation("断路器测试-正常")
     @PostMapping("/hystrixNormal")
     public CommonResult hystrixNormal(@RequestBody String name) throws Exception {
         String msg = testService.hystrixNormal(name);
