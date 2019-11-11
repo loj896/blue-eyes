@@ -79,7 +79,6 @@
         <spring.boot.admin.version>2.1.6</spring.boot.admin.version>
         <quartz.version>2.3.0</quartz.version>
         <quartzjobs.version>2.3.0</quartzjobs.version>
-        <log4j2.version>1.16.22</log4j2.version>
         <!--打包时跳过测试类-->
         <maven.test.skip>true</maven.test.skip>
     </properties>
