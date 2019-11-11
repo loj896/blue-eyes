@@ -1,16 +1,15 @@
-package com.blue.eyes;
+package com.blue.eyes.config;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.cloud.netflix.hystrix.EnableHystrix;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.client.RestTemplate;
 
 /***
  *                    .::::. 
  *                  .::::::::. 
  *                 :::::::::::        @author liuhai
- *             ..:::::::::::'         @date 2019-08-21 14:30
- *           '::::::::::::'           @description
+ *             ..:::::::::::'         @date 2019-11-11 16:32
+ *           '::::::::::::'           @description RestTemplate配置
  *             .:::::::::: 
  *        '::::::::::::::.. 
  *             ..::::::::::::. 
@@ -25,12 +24,12 @@ import org.springframework.cloud.netflix.hystrix.EnableHystrix;
  * ```` ':.          ':::::::::'                  ::::.. 
  *                    '.:::::'                    ':'````.. 
  */
-@SpringBootApplication
-@EnableDiscoveryClient
-@EnableHystrix
-public class MailApplication {
+@Configuration
+public class RestTemplateConfig {
 
-    public static void main(String[] args) {
-        SpringApplication.run(MailApplication.class, args);
+    @Bean
+    public RestTemplate restTemplate() {
+        return new RestTemplate();
     }
+
 }

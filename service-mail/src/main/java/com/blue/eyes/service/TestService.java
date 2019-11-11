@@ -1,15 +1,10 @@
-package com.blue.eyes;
+package com.blue.eyes.service;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.cloud.netflix.hystrix.EnableHystrix;
-
-/***
+/*** 
  *                    .::::. 
  *                  .::::::::. 
  *                 :::::::::::        @author liuhai
- *             ..:::::::::::'         @date 2019-08-21 14:30
+ *             ..:::::::::::'         @date 2019-11-11 15:58
  *           '::::::::::::'           @description
  *             .:::::::::: 
  *        '::::::::::::::.. 
@@ -25,12 +20,11 @@ import org.springframework.cloud.netflix.hystrix.EnableHystrix;
  * ```` ':.          ':::::::::'                  ::::.. 
  *                    '.:::::'                    ':'````.. 
  */
-@SpringBootApplication
-@EnableDiscoveryClient
-@EnableHystrix
-public class MailApplication {
+public interface TestService {
 
-    public static void main(String[] args) {
-        SpringApplication.run(MailApplication.class, args);
-    }
+    String hystrixtError(String name) throws Exception;
+
+    String hystrixNormal(String name) throws Exception;
+
+    String errorDefault(String name);
 }
