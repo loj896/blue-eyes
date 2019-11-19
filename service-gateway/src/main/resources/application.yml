@@ -16,12 +16,24 @@ spring:
         password: @security.user.pwd@
         instance:
           prefer-ip: true
+  security:
+    user:
+      name: @security.user.name@
+      password: @security.user.pwd@
   cloud:
     gateway:
-      discovery:
-        locator:
-          enabled: true
-          lower-case-service-id: true
+      routes:
+        - id: mail
+          # 转发到地址：mail.service.url/mail/** 对应的api
+          uri: @mail.service.url@
+          predicates:
+            # 访问地址 http://localhost:6802/mail/ 开头时
+          - Path=/mail/**
+        - id: plan
+          uri: @plan.service.url@
+          predicates:
+          - Path=/plan/**
+
 
 # eureka
 eureka:

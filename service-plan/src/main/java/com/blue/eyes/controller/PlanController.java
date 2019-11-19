@@ -8,12 +8,10 @@ import com.blue.eyes.service.PlanService;
 import com.blue.eyes.util.ResponseMgr;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /***
  *                    .::::. 
@@ -52,6 +50,12 @@ public class PlanController {
             return ResponseMgr.success("添加成功");
         }
         return ResponseMgr.fail("添加失败");
+    }
+
+    @ApiOperation("Hello")
+    @GetMapping("/hello")
+    public CommonResult hello(@ApiParam(value = "姓名") @RequestParam(required = false) String name){
+        return ResponseMgr.successWithData("hello "+name+", this is plan service.");
     }
 
 

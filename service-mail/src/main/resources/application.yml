@@ -26,6 +26,10 @@ spring:
         password: @security.user.pwd@
         instance:
           prefer-ip: true
+  security:
+    user:
+      name: @security.user.name@
+      password: @security.user.pwd@
 
 # eureka
 eureka:

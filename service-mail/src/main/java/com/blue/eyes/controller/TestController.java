@@ -5,6 +5,7 @@ import com.blue.eyes.service.TestService;
 import com.blue.eyes.util.ResponseMgr;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -30,7 +31,7 @@ import org.springframework.web.bind.annotation.*;
  */
 @Api(tags = "测试接口", description = "测试接口类")
 @RestController
-@RequestMapping("/test")
+@RequestMapping("/mail/test")
 public class TestController {
 
     @Autowired
@@ -48,5 +49,11 @@ public class TestController {
     public CommonResult hystrixNormal(@RequestBody String name) throws Exception {
         String msg = testService.hystrixNormal(name);
         return ResponseMgr.successWithData(msg);
+    }
+
+    @ApiOperation("Hello")
+    @GetMapping("/hello")
+    public CommonResult hello(@ApiParam(value = "姓名") @RequestParam(required = false) String name){
+        return ResponseMgr.successWithData("hello "+name+", this is mail service.");
     }
 }
