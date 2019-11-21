@@ -1,7 +1,7 @@
 <template>
     <el-form ref="form" :model="form" label-width="80px">
         <el-form-item label="用户名">
-            <el-input show-word-limit maxlength="20" placeholder="请输入用户名" v-model="form.username"></el-input>
+            <el-input placeholder="请输入用户名" v-model="form.username"></el-input>
         </el-form-item>
         <el-form-item label="密码">
             <el-input placeholder="请输入密码" v-model="form.password" show-password></el-input>
@@ -26,7 +26,17 @@
         },
         methods: {
             onSubmit() {
-                console.log('submit!');
+                //发送get请求
+                this.$http.post('/sys/user/getUserList',{
+                    params:{
+                        userName: this.form.username,
+                        password: this.form.password
+                    }
+                }).then(function(res){
+                    console.log(res);
+                },function(){
+                    console.log('请求失败处理');
+                });
             },
             reset(){
                 this.form.username = '',
