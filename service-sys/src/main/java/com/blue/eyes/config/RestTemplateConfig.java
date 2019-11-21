@@ -1,15 +1,15 @@
-package com.blue.eyes;
+package com.blue.eyes.config;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.client.RestTemplate;
 
 /***
  *                    .::::. 
  *                  .::::::::. 
  *                 :::::::::::        @author liuhai
- *             ..:::::::::::'         @date 2019-09-03 16:27
- *           '::::::::::::'           @description
+ *             ..:::::::::::'         @date 2019-11-11 16:32
+ *           '::::::::::::'           @description RestTemplate配置
  *             .:::::::::: 
  *        '::::::::::::::.. 
  *             ..::::::::::::. 
@@ -24,11 +24,12 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  * ```` ':.          ':::::::::'                  ::::.. 
  *                    '.:::::'                    ':'````.. 
  */
-@SpringBootApplication
-@EnableDiscoveryClient
-public class AuthApplication {
+@Configuration
+public class RestTemplateConfig {
 
-    public static void main(String[] args) {
-        SpringApplication.run(AuthApplication.class, args);
+    @Bean
+    public RestTemplate restTemplate() {
+        return new RestTemplate();
     }
+
 }

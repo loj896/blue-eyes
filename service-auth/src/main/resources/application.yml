@@ -8,24 +8,26 @@ spring:
     name: service-auth
   profiles:
     active: @current.active.profile@
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://47.105.161.199:3306/mydb?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&rewriteBatchedStatements=true&allowPublicKeyRetrieval=true
-    username: @db.user@
-    password: @db.pwd@
-  data:
-    mongodb:
-      # 单机模式 mongodb://name:pass@ip:port/database
-      # 集群模式 mongodb://user:pwd@ip1:port1,ip2:port2/database
-      uri: mongodb://@mongodb.user@:@mongodb.pwd@@47.105.161.199:27017/loj-pro
+  redis:
+    host: @redis.host@
+    port: @redis.port@
+    password: @redis.pwd@
   boot:
     admin:
       client:
         url: @spring.boot.admin.url@
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: true
+        usernmae: @security.user.name@
+        password: @security.user.pwd@
+        instance:
+          prefer-ip: true
+  security:
+    user:
+      name: @security.user.name@
+      password: @security.user.pwd@
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#    show-sql: true
 
 # eureka
 eureka:
@@ -36,16 +38,6 @@ eureka:
     registryFetchIntervalSeconds: 5
     service-url:
       defaultZone: @eureka.url@
-
-# management
-management:
-  endpoints:
-    web:
-      exposure:
-        include: '*'
-  endpoint:
-    health:
-      show-details: ALWAYS
 
 mybatis-plus:
   mapper-locations: classpath*:mapper/**/*.xml

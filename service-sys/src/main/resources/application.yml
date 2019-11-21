@@ -1,13 +1,16 @@
 # server
 server:
-  port: 6823
+  port: 6825
 
 # spring
 spring:
   application:
-    name: service-mail
+    name: service-sys
   profiles:
     active: @current.active.profile@
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
   boot:
     admin:
       client:
@@ -46,3 +49,4 @@ mybatis-plus:
     map-underscore-to-camel-case: true
     cache-enabled: false
     call-setters-on-nulls: true
+

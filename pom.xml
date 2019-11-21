@@ -18,6 +18,7 @@
         <module>technical-demo</module>
         <module>service-plan</module>
         <module>service-job</module>
+        <module>service-sys</module>
     </modules>
 
     <dependencyManagement>
@@ -91,6 +92,7 @@
                 <eureka.url>http://localhost:6801/eureka/</eureka.url>
                 <mail.service.url>http://localhost:6823</mail.service.url>
                 <plan.service.url>http://localhost:6824</plan.service.url>
+                <sys.service.url>http://localhost:6825</sys.service.url>
                 <security.user.name>amei</security.user.name>
                 <security.user.pwd>PWD</security.user.pwd>
                 <db.user>amei</db.user>

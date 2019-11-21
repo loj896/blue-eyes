@@ -1,1 +1,26 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://47.105.161.199:3306/mydb?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&rewriteBatchedStatements=true&allowPublicKeyRetrieval=true
+    username: @db.user@
+    password: @db.pwd@
+  data:
+    mongodb:
+      # 单机模式 mongodb://name:pass@ip:port/database
+      # 集群模式 mongodb://user:pwd@ip1:port1,ip2:port2/database
+      uri: mongodb://@mongodb.user@:@mongodb.pwd@@47.105.161.199:27017/loj-pro
 
+# management
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS
+
+logging:
+  level:
+    root: info
+    com.blue.eyes: debug

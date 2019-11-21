@@ -7,6 +7,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.io.Serializable;
 import java.util.Collection;
+import java.util.Date;
 
 @TableName(value = "t_user")
 public class User implements UserDetails, Serializable {
@@ -23,6 +24,10 @@ public class User implements UserDetails, Serializable {
     private String realName;
 
     private String userStatus;
+
+    private Date addDate;
+
+    private Date uptDate;
 
     public String getUserId() {
         return userId;
@@ -102,6 +107,19 @@ public class User implements UserDetails, Serializable {
         return true;
     }
 
+    public Date getAddDate() {
+        return addDate;
+    }
 
+    public void setAddDate(Date addDate) {
+        this.addDate = addDate;
+    }
 
+    public Date getUptDate() {
+        return uptDate;
+    }
+
+    public void setUptDate(Date uptDate) {
+        this.uptDate = uptDate;
+    }
 }

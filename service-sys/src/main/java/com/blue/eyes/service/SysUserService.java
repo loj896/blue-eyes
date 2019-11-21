@@ -1,12 +1,10 @@
-package com.blue.eyes.service.user.impl;
+package com.blue.eyes.service;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.blue.eyes.dto.AddUserDto;
+import com.blue.eyes.dto.UptUserDto;
 import com.blue.eyes.dto.user.SelUserDto;
 import com.blue.eyes.entity.user.User;
-import com.blue.eyes.mapper.user.UserMapper;
-import com.blue.eyes.service.user.UserService;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -14,7 +12,7 @@ import java.util.List;
  *                    .::::. 
  *                  .::::::::. 
  *                 :::::::::::        @author liuhai
- *             ..:::::::::::'         @date 2019-08-21 13:50
+ *             ..:::::::::::'         @date 2019-08-22 9:42
  *           '::::::::::::'           @description
  *             .:::::::::: 
  *        '::::::::::::::.. 
@@ -30,11 +28,33 @@ import java.util.List;
  * ```` ':.          ':::::::::'                  ::::.. 
  *                    '.:::::'                    ':'````.. 
  */
-@Service
-public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements UserService {
+public interface SysUserService {
 
-    @Override
-    public IPage<User> getPageList(IPage<User> iPage, SelUserDto userDto) {
-        return this.baseMapper.getPageList(iPage, userDto);
-    }
+    /**
+     * 分页查询用户信息
+     * @param userDto
+     * @return
+     */
+    IPage<User> getPageList(SelUserDto userDto);
+
+    /**
+     * 新增用户信息
+     * @param userList
+     * @return
+     */
+    boolean addUser(List<AddUserDto> userList);
+
+    /**
+     * 修改用户记录
+     * @param userList
+     * @return
+     */
+    boolean uptUser(List<UptUserDto> userList);
+
+    /**
+     * 删除用户信息
+     * @param userIds
+     * @return
+     */
+    boolean delUser(List<String> userIds);
 }

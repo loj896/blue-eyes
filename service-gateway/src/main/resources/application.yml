@@ -33,7 +33,10 @@ spring:
           uri: @plan.service.url@
           predicates:
           - Path=/plan/**
-
+        - id: sys
+          uri: @sys.service.url@
+          predicates:
+          - Path=/sys/**
 
 # eureka
 eureka:
@@ -44,13 +47,3 @@ eureka:
     registryFetchIntervalSeconds: 5
     service-url:
       defaultZone: @eureka.url@
-
-# management
-management:
-  endpoints:
-    web:
-      exposure:
-        include: '*'
-  endpoint:
-    health:
-      show-details: ALWAYS

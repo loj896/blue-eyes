@@ -25,13 +25,3 @@ eureka:
     metadata-map:
       user.name: @security.user.name@ # ${spring.security.user.name}
       user.password: @security.user.pwd@ # ${spring.security.user.password}
-
-# management
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
-  endpoint:
-    health:
-      show-details: ALWAYS
