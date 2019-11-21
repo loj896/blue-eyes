@@ -1,21 +1,16 @@
 <template>
-    <div>
-        <div class="outer_label">
-            <img class="inner_label login_logo" src="../../assets/logo.png">
-        </div>
-        <div class="hello">
-            <h1>{{ msg }}</h1>
-        </div>
-        <div class="login_form">
-            <input type="text"  class="qxs-ic_user qxs-icon"  placeholder="用户名" v-model="userName">
-            <input type="password"  class="qxs-ic_password qxs-icon"  placeholder="密码" v-model="password">
-            <button @click="login" class="login_btn el-button el-button&#45;&#45;primary is-round" type="primary" round>登&nbsp;&nbsp;录</button>
-            <!--<el-button class="login_btn" @click.native="login" type="primary" round :loading="isBtnLoading">登录</el-button>-->
-            <div style="margin-top: 10px;">
-                <!--<span style="color: #000099;" @click="login">司机账号登陆</span>--><span style="float: right;color: #A9A9AB">忘记密码？</span>
-            </div>
-        </div>
-    </div>
+    <el-form ref="form" :model="form" label-width="80px">
+        <el-form-item label="用户名">
+            <el-input show-word-limit maxlength="20" placeholder="请输入用户名" v-model="form.username"></el-input>
+        </el-form-item>
+        <el-form-item label="密码">
+            <el-input placeholder="请输入密码" v-model="form.password" show-password></el-input>
+        </el-form-item>
+        <el-form-item>
+            <el-button type="primary" @click="onSubmit">登录</el-button>
+            <el-button type="" @click="reset">重置</el-button>
+        </el-form-item>
+    </el-form>
 </template>
 
 <script>
@@ -23,69 +18,24 @@
         name: "Login",
         data() {
             return {
-                userName: '',
-                password: '',
-                isBtnLoading: false,
-                msg: 'Login Blue Eyes'
-            }
-        },
-        created () {
-            if(JSON.parse( localStorage.getItem('user')) && JSON.parse( localStorage.getItem('user')).userName){
-                this.userName = JSON.parse( localStorage.getItem('user')).userName;
-                this.password = JSON.parse( localStorage.getItem('user')).password;
-            }
-        },
-        computed: {
-            btnText() {
-                if (this.isBtnLoading) return '登录中...';
-                return '登录';
+                form:{
+                    username: '',
+                    password: ''
+                }
             }
         },
         methods: {
-            login() {
-                if (!this.userName) {
-                    this.$message.error('请输入用户名');
-                    return;
-                }
-                if (!this.password) {
-                    this.$message.error('请输入密码');
-                    return;
-                }
-
+            onSubmit() {
+                console.log('submit!');
+            },
+            reset(){
+                this.form.username = '',
+                this.form.password = ''
             }
         }
     }
 </script>
 
 <style scoped>
-    .login_form {
-        padding-top: 2%;
-        padding-left: 10%;
-        padding-right: 10%;
-    }
-    .qxs-ic_user {
-        /*background: url("../../assets/login/ic_user.png") no-repeat;*/
-        background-size: 13px 15px;
-        background-position: 3%;
-    }
-    .qxs-ic_password {
-        /*background: url("../../assets/login/ic_password.png") no-repeat;*/
-        background-size: 13px 15px;
-        background-position: 3%;
-        margin-bottom: 20px;
-    }
-    .login_logo {
-        height: 100%;
-    }
-    .login_btn {
-        width: 100%;
-        height: 46px;
-        font-size: 16px;
-        font-weight: bold;
-        background: -webkit-linear-gradient(left, gray, goldenrod); /* Safari 5.1 - 6.0 */
-        background: -o-linear-gradient(right, gray, goldenrod); /* Opera 11.1 - 12.0 */
-        background: -moz-linear-gradient(right, gray, goldenrod); /* Firefox 3.6 - 15 */
-        background: linear-gradient(to right, gray , goldenrod); /* 标准的语法 */
-        filter: brightness(1.4);
-    }
+
 </style>

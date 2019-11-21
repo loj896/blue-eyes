@@ -1,20 +1,17 @@
 <template>
   <div id="app">
-    <!--<img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>-->
-    <IndexPage></IndexPage>
+    <!--<img alt="Vue logo" src="./assets/logo.png">-->
+    <Login msg="Welcome to Your Vue.js App"/>
   </div>
 </template>
 
 <script>
-//import HelloWorld from './components/HelloWorld.vue'
-import IndexPage from './components/index/IndexPage.vue'
+import Login from './components/login/Login.vue'
 
 export default {
   name: 'app',
   components: {
-    // HelloWorld
-      IndexPage
+      Login
   }
 }
 </script>
