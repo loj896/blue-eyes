@@ -48,14 +48,14 @@ public class OAuth2Config extends AuthorizationServerConfigurerAdapter {
         // 将客户端的信息存储在内存中
         clients.inMemory()
                 // 配置一个客户端
-                .withClient("service-user")
+                .withClient("service-geteway")
                 .secret("123456")
                 // 配置客户端的域
                 .scopes("service")
-                // 配置验证类型为refresh_token和password
-                .authorizedGrantTypes("refresh_token", "password")
-                // 配置token的过期时间为1h
-                .accessTokenValiditySeconds(3600 * 1000);
+                // 配置验证类型为 client_credentials、refresh_token 和 password
+                .authorizedGrantTypes("client_credentials", "refresh_token", "password")
+                // 配置token的过期时间为20分钟（1200秒）
+                .accessTokenValiditySeconds(1200 * 1000);
     }
 
     @Override

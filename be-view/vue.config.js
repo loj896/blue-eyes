@@ -8,14 +8,14 @@ module.exports = {
         port: 8080,
         // open: true, //配置自动启动浏览器
         proxy: {
-            '/api': {
+            '/sys': {
                 target: 'http://localhost:6802/', //对应自己的接口
-                changeOrigin: true,
+                changeOrigin: true, //是否允许跨越
                 ws: true,
                 pathRewrite: {
-                    '^/api': ''
+                    '^/sys': '/sys'
                 }
             }
         }
-    },
+    }
 }

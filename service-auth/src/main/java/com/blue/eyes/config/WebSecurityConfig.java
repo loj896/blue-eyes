@@ -1,7 +1,6 @@
 package com.blue.eyes.config;
 
 import com.blue.eyes.service.UserServiceDetail;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -42,8 +41,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     private UserServiceDetail userService;
 
     @Override
-    public @Bean
-    AuthenticationManager authenticationManagerBean() throws Exception {
+    @Bean
+    public AuthenticationManager authenticationManagerBean() throws Exception {
         return super.authenticationManagerBean();
     }
 
@@ -54,7 +53,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authenticationEntryPoint((request, response, authException) -> response.sendError(HttpServletResponse.SC_UNAUTHORIZED))
                 .and()
                 .authorizeRequests()
-                .antMatchers("/**").authenticated()
+                .antMatchers("/login").authenticated()
                 .and()
                 .httpBasic();
     }

@@ -13,12 +13,10 @@ import com.blue.eyes.service.SysUserService;
 import com.blue.eyes.util.ResponseMgr;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -100,6 +98,13 @@ public class UserController {
             return ResponseMgr.success("修改成功");
         }
         return ResponseMgr.fail("修改失败");
+    }
+
+
+    @ApiOperation("Hello")
+    @GetMapping("/hello")
+    public CommonResult hello(@ApiParam(value = "姓名") @RequestParam(required = false) String name){
+        return ResponseMgr.successWithData("hello "+name+", this is sys service.");
     }
 
 
